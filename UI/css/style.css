@@ -1,0 +1,281 @@
+
+body {
+    padding: 0;
+    margin: 0;
+    background: #FFF;
+    font-family: 'Roboto', sans-serif;
+}
+
+body a {
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    text-decoration: none;
+}
+
+body a:hover {
+    text-decoration: none;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+body a:focus,
+a:hover {
+    text-decoration: none;
+}
+
+input[type="button"],
+input[type="submit"] {
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover {
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6, button {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+
+/* Register & Sign-up nav bar*/
+ul {
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li{
+    float: right;
+}
+
+
+
+.nav{
+    border: none;
+    background-color: #333;
+    padding: 30px;
+    color: #888;
+    text-align: center;
+    font-size: 15px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav:hover {
+   
+    color: aqua
+
+}
+/*---------------------------------*/
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 25px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 37%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .75;
+}
+
+
+.modal-body {padding: 2px 16px;}
+
+
+/*-----------------*/
+
+
+
+
+.modal-header .close {
+    padding: 1rem;
+    margin: -1rem -1rem -1rem auto;
+  }
+
+
+  .modal-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+  }
+
+ 
+  input[type="button"],
+  input[type="submit"] {
+      transition: 0.5s all;
+      -webkit-transition: 0.5s all;
+      -moz-transition: 0.5s all;
+      -o-transition: 0.5s all;
+      -ms-transition: 0.5s all;
+  }
+  
+  input[type="button"]:hover,
+  input[type="submit"]:hover {
+      transition: 0.5s all;
+      -webkit-transition: 0.5s all;
+      -moz-transition: 0.5s all;
+      -o-transition: 0.5s all;
+      -ms-transition: 0.5s all;
+  }
+  
+
+
+
+
+  input[type=text],input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+
+
+.form {
+    border-radius: 5px;
+    background-color: #fefefeS;
+    
+}
+
+.text-center {
+    text-align: center !important;
+  }
+
+  button.submit {
+    background: #ff3c41;
+    color: #fff;
+    letter-spacing: 1px;
+    border: none;
+    padding: 10px 23px;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    transition: 0.5s all;
+}
+
+button.submit:hover {
+    background: #0ebeff;
+    -webkit-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    -o-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    transform: translateY(10px);
+}
+
+button.submit {
+    margin-top: 1.5em;
+}
+
+label {
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.modal-body h5 {
+    color: #ff3b44;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 5px;
+    
+}
+
+.text-center a{
+    color: #2fa0c9
+}
