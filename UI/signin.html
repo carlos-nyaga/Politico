@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign_In</title>
+        <link rel="stylesheet"  href="css/style.css" type="text/css" media="all">
+        
+    </head>
+
+    <body>
+        <!--Register & Sign_up-->
+        <ul>
+            <!--Trigger form modals-->
+            <li><button id="regBtn" class="nav" >register</button></li>
+            <li><button id="logBtn" class="nav">login</button></li>
+        </ul>
+
+        
+
+       
+
+        <!--Login modal-->
+        
+        
+
+        <div id="logModal" class="modal">
+
+                
+                <div class="modal-content">
+                        <div class="modal-header">
+                          <span class="close">&times;</span>
+                        </div>
+
+                        <div class="modal-body">
+                                <div class="form">
+                                        <h5 class="text-center">Login Now</h5>
+                                        <form action="#" method="POST">
+                                            
+                                            <label for="ID">ID No</label>
+                                            <input type="text" id="ID" name="IDnumber">
+                                        
+                                             
+                        
+                                            <label class="mb-2">Password</label>
+                                            <input type="password" name="password" placeholder="" required="">
+                                            
+                        
+                                          
+                                            <button type="submit" class="submit">Login</button>
+                        
+                                            <p class="text-center">
+                                                    <a href="#">Forgot your password?</a>
+                                                </p>
+                                                <p class="text-center">
+                                                    Don't have an account?
+                                                    <a href="#" data-toggle="modal" data-target="#regModal">Create one now</a>
+                                                </p>
+                                          </form>
+                                        
+                                </div>
+                        
+                </div>
+              
+              </div>-->
+        
+              
+              
+
+      
+    
+        <script>
+                // Get the modal
+                var modal = document.getElementById('logModal');
+                
+                // Get the button that opens the modal
+                var btn = document.getElementById("logBtn");
+                
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+                
+                // When the user clicks the button, open the modal 
+                btn.onclick = function() {
+                    modal.style.display = "block";
+                }
+                
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+                
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+                </script>
+
+                
+                
+    </body>
+</html>
