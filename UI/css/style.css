@@ -68,15 +68,14 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #333;
+   
 }
 
-li{
-    float: right;
-}
 
 
 
 .nav{
+    float: right;
     border: none;
     background-color: #333;
     padding: 30px;
@@ -85,7 +84,7 @@ li{
     font-size: 15px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-    font-family: 'Montserrat', sans-serif;
+   
 }
 
 .nav:hover {
@@ -278,4 +277,326 @@ label {
 
 .text-center a{
     color: #2fa0c9
+}
+
+
+/* Admin Dashboard */
+
+.lnav{
+    
+    float: left;
+    border: none;
+    background-color: #333;
+    padding: 30px;
+    color: #888;
+    text-align: center;
+    font-size: 23px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    
+}
+
+.navigation{
+    background-color: #0ebeff;
+    padding-bottom: 5px;
+}
+
+
+
+.editt-item{
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 30px;
+    color: #888;
+    display: inline;
+    float: right;
+
+  
+}
+
+
+
+
+
+
+a.navbar-brand {
+    color: #0ebeff;
+    font-size: 35px;
+    font-weight: 800;
+    padding: 30px;
+    display: inline;
+    font-style: oblique;
+    font-family: Georgia, serif;
+    
+    
+}
+
+.navbar-brand span {
+    color: #ff0000;
+}
+
+ a.navbar-brand .editt{
+    
+    display: inline;
+    font-size: 8px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: -7px;
+    text-transform: uppercase;
+
+    
+  }
+
+.edittt{
+    color: #fff;
+  display: inline;
+  font-size: 8px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: -7px;
+  text-transform: uppercase;
+}
+
+
+/* flex container */
+
+.flex-container{
+   
+    background-color: #ff0000;
+    display: flex;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    align-items: stretch;
+
+
+}
+.flex-item{
+    width: 50%;
+    margin-top: 5px;
+    background-color: #fefefe;
+
+    
+
+}
+
+
+
+
+
+
+
+
+
+/*Political Parties*/
+
+.parties ul{
+    background-color:#0ebeff;
+}
+.parties ul li{
+    padding: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #FFF;
+    margin: 10px;
+    background-color: #333;
+    text-align: left;
+    
+
+}
+.parties{
+    background-color: #FFF;
+}
+#rounded{
+    border-radius: 10px;
+    background-color: #333;
+    color:#0ebeff;
+    padding: 20px;
+    height: 30px;
+    max-width: 90%
+  
+}
+
+
+
+/* Style the list */
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: none;
+    background-color: #;
+}
+
+/* Float the list items side by side */
+ul.tab li a.tabulinks{float: left;}
+
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline;
+    color: #888;
+    text-align: center;
+    padding: 18px 18px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {
+    
+    color:#0ebeff;
+
+}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {
+    color: #0ebeff;
+}
+
+.tabcontent {
+    display: none;
+    border: 1px solid #fefefe;
+    border-top: none;
+    width: 100%;
+    background-color:#fefefe;
+    padding: 15px;
+    text-align: left;
+}
+
+.tabcontent {
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+ul.tab #right{
+    float: right;
+    padding-right: 130px;
+    background-color: #ff0000;
+    color: #333;
+    font-size: 20px;
+    
+}
+ul.tab #right:hover{
+    
+    color: #888;
+    
+}
+
+.dd{
+    float: right;
+
+}
+.stats{
+    width: 50%;
+}
+
+input[type='submit'], button, [aria-label]{
+    cursor: pointer;
+  }
+
+  
+#spoiler{
+    display: none;
+    
+  }
+.table-input{
+    font-family: 'Montserrat', sans-serif;
+    
+
+}
+
+
+  .table-input th, td {
+    padding: 15px;
+    text-align: left;
+    
+    
+    
+  }
+
+  .table-input td{
+    border-bottom: 3px solid #ff0000;
+
+  }
+  .table-input input[type='text']{
+      max-width: 50%;
+      
+  }
+
+  .tabbcontent {
+    border-left: 5px solid #ff0000;
+    border-top: none;
+    width: 100%;
+    background-color:#fefefe;
+    padding: 15px;
+    text-align: left;
+}
+
+.polls {
+
+    height:24px;
+    border-radius:16px;
+   
+   
+    
+    
+}
+
+.p1{
+    background-color: #ff0000;
+    width: 155%;
+}
+
+
+.p2{
+    background-color: #0ebeff;
+    width: 141%;
+}
+
+.p3{
+    background-color: rgb(124, 231, 53);
+    width: 70%;
+}
+
+.p4{
+    background-color: #d12cd6;
+    width: 76%;
+}
+
+.p5{
+    background-color: #e79654;
+    width: 50%;
+}
+
+.p6{
+    background-color: #ff0000;
+    width: 47%;
+}
+
+.poll-output{
+    font-family: 'Montserrat', sans-serif;
+    padding: 15px;
+
+}
+.poll-output th, #pad-it{
+    padding: 50px 15px 15px 15px;
+    
+
+
 }
