@@ -600,3 +600,79 @@ input[type='submit'], button, [aria-label]{
 
 
 }
+
+.flex-container2{
+
+    background-color: #fefefe;
+    display: flex;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    flex-flow: wrap;
+    align-content: space-around;
+    
+    
+
+}
+
+.flex-item2{
+
+    width: 380px;
+    height: 450px;
+    background-color: #fefefe;
+    padding: 30px;
+    margin:5px;
+    
+
+}
+
+.flip-card{
+    position: relative;
+    margin: 10px auto;
+    width: 250px;
+    height: 250px;
+    z-index: 1;
+}
+
+.flip-card{
+    perspective: 1000;
+    -webkit-perspective:1000;
+}
+
+.flip-card-inner{
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 1.0s linear;
+}
+
+/*
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    box-shadow: -5px 5px 5px #aaa;
+  }
+  */
+  
+  .flip-card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-back {
+    display: block;
+   /* transform: rotateY(180deg);*/
+    box-sizing: border-box;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    background-color:#333;
+  }
+
+.icon-living{
+    height: 250px;
+    width: 250px;
+    background-color: #fefefe;
+}
+
