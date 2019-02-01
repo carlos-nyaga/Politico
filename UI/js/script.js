@@ -27,7 +27,7 @@ function openTab(evt, cityName) {
 
 var app = new function() {
     this.el = document.getElementById('countries');
-    this.countries = ['Republicans', 'Democrats', 'Jubilee', 'NASA', 'Political Bash', 'The people', 'Power to you', 'We Go', 'Luxembourg'];
+    this.countries = ['Republicans', 'Democrats', 'Political Bash', 'The people', 'Power to you', 'We Go', 'Luxembourg'];
     this.Count = function(data) {
       var el   = document.getElementById('counter');
       var name = 'country';
