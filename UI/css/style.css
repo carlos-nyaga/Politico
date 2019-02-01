@@ -277,6 +277,7 @@ ul {
 
 .text-center a{
     color: #2fa0c9
+
 }
 
 
@@ -362,15 +363,14 @@ ul {
 
   
 .edittt{
->>>>>>> 77f869b00ed95ad980d96ce159a52381718bcb15
     color: #fff;
-  display: inline;
-  font-size: 8px;
-  font-family: 'Roboto', sans-serif;
-  letter-spacing: 1px;
-  text-align: center;
-  margin-top: -7px;
-  text-transform: uppercase;
+    display: inline;
+    font-size: 8px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: -7px;
+    text-transform: uppercase;
 }
 
 
@@ -603,7 +603,6 @@ input[type='submit'], button, [aria-label]{
 
 
 }
-<<<<<<< HEAD
 
 .flex-container2{
 
@@ -624,6 +623,7 @@ input[type='submit'], button, [aria-label]{
     width: 380px;
     height: 450px;
     background-color: #fefefe;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 30px;
     margin:5px;
     
@@ -672,15 +672,16 @@ input[type='submit'], button, [aria-label]{
     color: white;
     text-align: center;
     background-color:#333;
+    height: 200px;
   }
 
 .icon-living{
     height: 250px;
     width: 250px;
-    background-color: #fefefe;
+    background-color: #e9ecef;
+    border-radius: 50%;
 }
 
-=======
   }
   
 
@@ -720,4 +721,3 @@ input[type='submit'], button, [aria-label]{
     text-shadow: 2px 2px 2px rgba(41, 41, 41, 0.26);
  
   }
->>>>>>> 277c9eb3d1ded8958913a6c60f72158fef0477a6
