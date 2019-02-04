@@ -1,0 +1,100 @@
+
+		<!DOCTYPE html>
+		<html>
+		<head>
+		  <meta charset="UTF-8">
+		  <title>Ballot_Box</title>
+		  <link rel="stylesheet"  href="css/style.css" type="text/css" media="all">
+		  
+		</head>
+		<body style="background-image:url(images/b.jpg)">
+				<div>
+						<form id="regForm" action="" class="vote modal-content">
+			
+                                <h2>Voting in progress...</h2>
+                                <p>Choose preferred candidate for:</p>
+
+			
+								<div class="tab">
+										<label for="country">President:</label>
+										<select id="country" name="country">
+											<option value="none"></option>
+											<option value="barack">Barrack Obama</option>
+											<option value="trump">Dornald Trump</option>
+											<option value="abe">Abe Lincon</option>
+										</select>
+								</div>
+								
+								<div class="tab">
+										<label for="country">Governor:</label>
+										<select id="country" name="country">
+                                                <option value="none"></option>
+											<option value="hero">Hero Hamada</option>
+											<option value="alexa">Alexa Amazon</option>
+											<option value="siri">Siri Apple</option>
+										</select>
+								</div>
+								
+								<div class="tab">
+										<label for="country">Senator:</label>
+										<select id="country" name="country">
+                                                <option value="none"></option>
+											<option value="dark">Dark Vader</option>
+											<option value="elite">Elite Team</option>
+											<option value="quest">Quest Richard</option>
+										</select>
+								</div>
+								
+								<div class="tab">
+										<label for="country">Member of Parliament:</label>
+										<select id="country" name="country">
+                                                <option value="none"></option>
+											<option value="browdy">Browdy Nelson</option>
+											<option value="alice">Alice Parker</option>
+											<option value="don">Don don</option>
+										</select>
+								</div>
+			
+								<div class="tab">
+										<label for="country">MCA:</label>
+										<select id="country" name="country">
+                                                <option value="none"></option>
+											<option value="lomus">lomus Cyber</option>
+											<option value="peach">Peak Peach</option>
+											<option value="ISNS">ISNS</option>
+										</select>
+								</div>
+								<div class="tab">
+										<label for="country">Women Rep:</label>
+										<select id="country" name="country">
+                                                <option value="none"></option>
+											<option value="lydia">Lydia Lantern</option>
+											<option value="cloe">Cloe Blue</option>
+											<option value="geniius">Genius Mellow</option>
+										</select>
+								</div>
+								
+								<div style="overflow:auto;">
+									<div style="float:right;">
+										<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+										<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+									</div>
+								</div>
+								
+								<!-- Circles which indicates the steps of the form: -->
+								<div style="text-align:center;margin-top:40px;">
+									<span class="step"></span>
+									<span class="step"></span>
+									<span class="step"></span>
+									<span class="step"></span>
+									<span class="step"></span>
+									<span class="step"></span>
+								</div>
+								
+								</form> 
+							</div>
+
+		<script type="text/javascript" src="js/vote.js"></script>
+		
+		</body>
+		</html>
