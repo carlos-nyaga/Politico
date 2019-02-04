@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User_Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet"  href="css/style.css" type="text/css" media="all">
+        
+    </head>
+
+    <body >
+
+        <div class="navigation">
+                <ul >
+                        
+                        <li><button id="logBtn" class="nav" onclick="window.location.href='index.html'">logout</button></li>
+                        <li><button id="logBtn" class="nav" onclick="window.location.href='profile.html'">profile</button></li>
+                        <li><button id="logBtn" class="nav" onclick="window.location.href='politician.html'">political</button></li>
+                        <li class="navbar-brand">Politico <span class="editt">Truth to self</span></li>
+                        <li class="lnav">Dashboard <span class="edittt">user</span></li>
+                       
+            
+                        
+                    
+                      </ul>         
+                    
+
+        </div>
+      
+      <ul class="tab">
+              <li><a href="#" class="editt-item  tabulinks"  onclick="openTab(event,'parties')" id="defaultOpen" >Registered Parties</a></li>
+              <li><a href="#" class="editt-item  tabulinks"  onclick="openTab(event,'politicians')">Politicians</a></li>
+              <li><a href="vote.html" class="editt-item Pol-party " id="right" >Vote</a></li>
+  
+      </ul>
+
+
+  <div id = "parties" class="tabcontent">
+      <h3  class="container " id="round">Registered Political Parties</h3>
+
+
+
+      <div class="container collapsible ">
+          <img src="images/proxy.png" alt="Avatar" style="width:90px">
+            <p class="title"><span>Political Bash.</span> Ain't no party like a political party</p>
+            <p>Party Leader: Abe Lincon</p>
+    
+        </div>
+        <div class="content">
+          <h5>ID: PP001</h5>
+          <p class="title">Registered: 25/01/19   <br/><br/>  Following: 234644</p>
+          <p>
+            Political Bash was formed at a party in white-house...
+          </p>
+    
+      </div>
+  
+  
+      <div class="container collapsible ">
+          <img src="images/imagees.jpeg" alt="Avatar" style="width:90px">
+            <p class="title"><span>Republicans.</span> Vote for AI vote for change</p>
+            <p>Party Leader: Siri Apple</p>
+    
+        </div>
+        <div class="content">
+          <h5>ID: PP002</h5>
+          <p class="title">Registered: 27/01/19   <br/><br/>  Following: 2534344</p>
+          <p>
+            Republicans was formed by the guy....the end.
+          </p>
+    
+      </div>
+  
+
+
+      <div class="container collapsible ">
+          <img src="images/sk.jpg" alt="Avatar" style="width:90px">
+            <p class="title"><span>Democrats.</span> Others speak we listen</p>
+            <p>Party Leader: Alexa Amazon</p>
+    
+        </div>
+        <div class="content">
+          <h5>ID: PP003</h5>
+          <p class="title">Registered: 28/01/19   <br/><br/>  Following: 1567444</p>
+          <p>
+           Democrats was formed by some guys....the end.
+          </p>
+    
+      </div>
+  
+
+
+      <div class="container collapsible ">
+          <img src="images/images.png" alt="Avatar" style="width:90px">
+            <p class="title"><span>The People.</span> May the forces be with you</p>
+            <p>Party Leader: Dark Vader</p>
+    
+        </div>
+        <div class="content">
+          <h5>ID: PP004</h5>
+          <p class="title">Registered: 01/02/19   <br/><br/>  Following: 233444</p>
+          <p>
+            The People was formed at a star wars premier...
+          </p>
+    
+      </div>
+  
+
+
+      <div class="container collapsible ">
+          <img src="images/tec.jpg" alt="Avatar" style="width:90px">
+            <p class="title"><span>We Go!.</span> Serving the community</p>
+            <p>Party Leader: Genius </p>
+    
+        </div>
+        <div class="content">
+          <h5>ID: PP005</h5>
+          <p class="title">Registered: 02/02/19   <br/><br/>  Following: 723444</p>
+          <p>
+            We Go! was formed by a genius while eating marshmellows with....
+          </p>
+    
+      </div>
+  
+
+
+      <div class="container collapsible ">
+          <img src="images/code_life.jpg" alt="Avatar" style="width:90px">
+            <p class="title"><span>Technocrats</span> People over tech</p>
+            <p>Party Leader: Hero Hamada</p>
+    
+        </div>
+        <div class="content">
+          <h5>ID: PP006</h5>
+          <p class="title">Registered: 02/02/19   <br/><br/>  Following: 623444</p>
+          <p>
+            Technocrats was formed watching a Big Hero 6 episode....
+          </p>
+    
+      </div>
+  
+  
+  
+  
+      <div class="container collapsible ">
+        <img src="images/part.jpg" alt="Avatar" style="width:90px">
+          <p class="title"><span>Elite.</span> Life to the people</p>
+          <p>Party Leader: ISNS</p>
+  
+      </div>
+      <div class="content">
+        <h5>ID: PP007</h5>
+        <p class="title">Registered: 03/02/19   <br/><br/>  Following: 123444</p>
+        <p>
+          Elite was... well... not sure....
+        </p>
+  
+    </div>
+  
+    </div>
+
+
+
+
+  <div id ="politicians" class="tabcontent">
+    <h3  class="container " id="round">Registered Politicians</h3>
+
+    
+    <h4 style="color:slategray">Position</h4>
+    
+    <div id="myBtnContainer">
+      <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+      <button class="btn" onclick="filterSelection('nature')"> Presidency</button>
+      <button class="btn" onclick="filterSelection('cars')"> Governor</button>
+      <button class="btn" onclick="filterSelection('people')"> Senator</button>
+    </div>
+    
+    <!-- Portfolio Gallery Grid -->
+    <div class="row">
+      <div class="column nature">
+        <div class="contentt">
+          <img src="images/ambassador-diplomat-government-man-speaker-512.png" alt="Mountains" style="width:100%">
+          <h4>Abe Lincon</h4>
+          <p class="title">Party ID: PP001</p>
+        </div>
+      </div>
+      <div class="column nature">
+        <div class="contentt">
+        <img src="images/Political_2-512.png" alt="Lights" style="width:100%">
+          <h4>Barack Obama</h4>
+          <p class="title">Party ID: PP002</p>
+        </div>
+      </div>
+      <div class="column nature">
+        <div class="contentt">
+        <img src="images/user-128.png" alt="Nature" style="width:100%">
+          <h4>Bill clinton</h4>
+          <p class="title">Party ID: PP005</p>
+        </div>
+      </div>
+      <div class="column nature">
+        <div class="contentt">
+        <img src="images/trump.png" alt="Nature" style="width:100%">
+          <h4>Donald Trump</h4>
+          <p class="title">Party ID: PP003</p>
+        </div>
+      </div>
+      <div class="column nature">
+        <div class="contentt">
+        <img src="images/inndex.png" alt="Nature" style="width:100%">
+          <h4>Rosevelt</h4>
+          <p class="title">Party ID: PP006</p>
+        </div>
+      </div>
+      
+      <div class="column cars">
+        <div class="contentt">
+          <img src="images/ceo.png" alt="Car" style="width:100%">
+          <h4>Alexa Amazon</h4>
+          <p class="title">Party ID: PP003</p>
+        </div>
+      </div>
+      <div class="column cars">
+        <div class="contentt">
+        <img src="images/child_boy-128.png" alt="Car" style="width:100%">
+          <h4>Siri Apple</h4>
+          <p class="title">Party ID: PP003</p>
+        </div>
+      </div>
+      <div class="column cars">
+        <div class="contentt">
+        <img src="images/user_male2-512.png" alt="Car" style="width:100%">
+          <h4>Cindy Blue</h4>
+          <p class="title">Party ID: PP006</p>
+        </div>
+      </div>
+      <div class="column cars">
+        <div class="contentt">
+        <img src="images/Political_8-512.png" alt="Car" style="width:100%">
+          <h4>Dark Vader</h4>
+          <p class="title">Party ID: PP004</p>
+        </div>
+      </div>
+      <div class="column cars">
+        <div class="contentt">
+        <img src="images/mp.jpg" alt="Car" style="width:100%">
+          <h4>Genius</h4>
+          <p class="title">Party ID: PP005</p>
+        </div>
+      </div>
+    
+      <div class="column people">
+        <div class="contentt">
+          <img src="images/as.png" alt="Car" style="width:100%">
+          <h4>Hero Hamada</h4>
+          <p class="title">Party ID: PP006</p>
+        </div>
+      </div>
+      <div class="column people">
+        <div class="contentt">
+        <img src="images/amb.png" alt="Car" style="width:100%">
+          <h4>ISNS</h4>
+          <p class="title">Party ID: PP007</p>
+        </div>
+      </div>
+      <div class="column people">
+        <div class="contentt">
+        <img src="images/indexx.jpeg" alt="Car" style="width:100%">
+          <h4>Lomus Storm</h4>
+          <p class="title">Party ID: PP004</p>
+        </div>
+      </div>
+      <div class="column people">
+        <div class="contentt">
+        <img src="images/kisspng-computer-icons-politics-election-political-party-5b395b6d8a7df8.9300115015304856135673.jpg" alt="Car" style="width:100%">
+          <h4>Richard Quest</h4>
+          <p class="title">Party ID: PP002</p>
+        </div>
+      </div>
+      <div class="column people">
+        <div class="contentt">
+        <img src="images/chief.png" alt="Car" style="width:100%">
+          <h4>Browdy Nelson</h4>
+          <p class="title">Party ID: PP001</p>
+        </div>
+      </div>
+      <div class="column people">
+        <div class="contentt">
+        <img src="images/200.png" alt="Car" style="width:100%">
+          <h4>Mary Jane</h4>
+          <p class="title">Party ID: PP007</p>
+        </div>
+      </div>
+      <div class="column people">
+        <div class="contentt">
+        <img src="images/chief.png" alt="Car" style="width:100%">
+          <h4>Aisle Queen</h4>
+          <p class="title">Party ID: PP005</p>
+        </div>
+      </div>
+      <div class="column people">
+        <div class="contentt">
+        <img src="images/child_boy-128.png" alt="Car" style="width:100%">
+          <h4>Malia Brooks</h4>
+          <p class="title">Party ID: PP002</p>
+        </div>
+      </div>
+      <div class="column people">
+        <div class="contentt">
+        <img src="images/795232.png" alt="Car" style="width:100%">
+          <h4>Tom Jerry</h4>
+          <p class="title">Party ID: PP007</p>
+        </div>
+      </div>
+        <div class="column people">
+          <div class="contentt">
+          <img src="images/Political-Persuasion_A.png.jpeg" alt="Car" style="width:100%">
+            <h4>Lady Lee</h4>
+            <p class="title">Party ID: PP006</p>
+          </div>
+        </div>
+      
+    </div>
+    </div>
+
+    
+
+ 
+ <script type="text/javascript" src="js/user.js"></script>
+ <script type="text/javascript" src="js/collapsible.js"></script>
+ <script type="text/javascript" src="js/vote.js"></script>
+
+</body>
+</html>
