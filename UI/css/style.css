@@ -304,8 +304,6 @@ ul {
 
 
 .editt-item{
-=======
-
     font-size: 17px;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;
@@ -313,8 +311,6 @@ ul {
     padding: 30px;
     color: #888;
     display: inline;
-    float: right;
-<<<<<<< HEAD
 
   
 }
@@ -338,14 +334,11 @@ ul {
 }
 
 .navbar-brand span {
-    color: #ff0000;
+    color: #fff;
 }
 
 
   
-  .navbar-brand span {
-    color: #ff0000;
-  }
   
 .navbar-brand .editt{
 
@@ -378,7 +371,7 @@ ul {
 
 .flex-container{
    
-    background-color: #ff0000;
+    background-color: #0ebeff;
     display: flex;
     min-width: 100%;
     width: 100%;
@@ -427,7 +420,6 @@ ul {
     background-color: #333;
     color:#0ebeff;
     padding: 20px;
-    height: 30px;
     max-width: 90%
   
 }
@@ -499,14 +491,14 @@ ul.tab li a:focus, .active {
 ul.tab #right{
     float: right;
     padding-right: 130px;
-    background-color: #ff0000;
+    background-color: #0ebeff;
     color: #333;
     font-size: 20px;
     
 }
 ul.tab #right:hover{
     
-    color: #888;
+    color:#fff;
     
 }
 
@@ -543,7 +535,7 @@ input[type='submit'], button, [aria-label]{
   }
 
   .table-input td{
-    border-bottom: 3px solid #ff0000;
+    border-bottom: 3px solid #888;
 
   }
   .table-input input[type='text']{
@@ -552,7 +544,7 @@ input[type='submit'], button, [aria-label]{
   }
 
   .tabbcontent {
-    border-left: 5px solid #ff0000;
+    border-left: 5px solid #0ebeff;
     border-top: none;
     width: 100%;
     background-color:#fefefe;
@@ -612,6 +604,7 @@ input[type='submit'], button, [aria-label]{
     width: 100%;
     height: 100%;
     flex-flow: wrap;
+    
     align-content: space-around;
     
     
@@ -620,7 +613,7 @@ input[type='submit'], button, [aria-label]{
 
 .flex-item2{
 
-    width: 380px;
+    width: 440px;
     height: 450px;
     background-color: #fefefe;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -672,12 +665,16 @@ input[type='submit'], button, [aria-label]{
     color: white;
     text-align: center;
     background-color:#333;
-    height: 200px;
+    width: 300px;
+    height: 225px;
+  }
+  .flip-card-back h1{
+      font-size: 20px;
   }
 
 .icon-living{
-    height: 250px;
-    width: 250px;
+    height: 150px;
+    width: 150px;
     background-color: #e9ecef;
     border-radius: 50%;
 }
@@ -693,75 +690,12 @@ input[type='submit'], button, [aria-label]{
 /* User Platform*/
 
 
-html {
-    box-sizing: border-box;
-  }
-  
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
- /* Three columns side by side */
- .column {
-    float: left;
-    width: 33.3%;
-    margin-bottom: 16px;
-    padding: 0 8px;
-  }
-  
-  /* Display the columns below each other instead of side by side on small screens */
-  @media screen and (max-width: 650px) {
-    .column {
-      width: 100%;
-      display: block;
-    }
-  }
-  
-  /* Add some shadows to create a card effect */
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Some left and right padding inside the container */
-  .container {
-    padding: 0 16px;
-  }
-  
-  /* Clear floats */
-  .container::after, .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
-  .title {
-    color: grey;
-  }
-  
-  .button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .button:hover {
-    background-color: #555;
-  } 
 
-.pol-party{
-      padding: 30px;
-      font-size: 20px;
-  }
-=======
-  }
-  
 
-  * {box-sizing:border-box}
+ 
+  
+ 
+ 
 
   /* Slideshow container */
   .slideshow-container {
@@ -790,11 +724,197 @@ html {
     padding: 90px;
     position: absolute;
     bottom: 0;
-    width: 50%;
+    width: 52%;
     text-align: center;
     font-size: 1.5em;
     font-weight: 800;
     text-shadow: 2px 2px 2px rgba(41, 41, 41, 0.26);
  
   }
->>>>>>> 46bd476e001578c63df6ab3d74cacba7bc55da49
+
+/* User Dashboard */
+
+  .collapsible {
+  
+    cursor: pointer;
+    height: 139px;;
+  
+  }
+  
+  .active, .collapsible:hover {
+    background-color: #555;
+  }
+  
+  .collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  
+  }
+  
+  .active:after {
+    content: "\2212";
+  }
+  
+  .content {
+    padding: 0 16px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+  }
+  
+  
+  
+  .title{
+    color: #888;
+  }
+  
+  
+  
+  .title span{
+    font-size: 20px;
+    margin-right: 15px;
+    text-align: right;
+    color: #000;
+  }
+  
+  
+  
+  /* Style the container with a rounded border, grey background and some padding and margin */
+  .container {
+    border: 2px solid #ccc;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 16px 0;
+  }
+  
+  /* Clear floats after containers */
+  .container::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Float images inside the container to the left. Add a right margin, and style the image as a circle */
+  .container img {
+    float: left;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+  
+  /* Increase the font-size of a span element */
+  .container span {
+    font-size: 20px;
+    margin-right: 15px;
+  }
+  
+  /* Add media queries for responsiveness. This will center both the text and the image inside the container */
+  @media (max-width: 500px) {
+    .container {
+      text-align: center;
+    }
+  
+    .container img {
+      margin: auto;
+      float: none;
+      display: block;
+    }
+  } 
+  
+#round{
+      background-color: #333;
+      color: #0ebeff;
+  }
+  .avatarp{
+      width: 90px;
+      float: left;
+      margin-right: 20px;
+      border-radius: 50%;
+  
+  }
+  
+  .nav #left{
+    float: left;
+  }
+  
+  
+  
+  
+  
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  
+  
+  /* Center website */
+  .main {
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  h1 {
+    font-size: 50px;
+    word-break: break-all;
+  }
+  
+  .row {
+    margin: 10px -16px;
+  }
+  
+  /* Add padding BETWEEN each column */
+  .row,
+  .row > .column {
+    padding: 8px;
+  }
+  
+  /* Create three equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 200px;
+    height: 280px;
+    display: none; /* Hide all elements by default */
+  }
+  
+  /* Clear floats after rows */ 
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Content */
+  .contentt {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    padding: 10px;
+    height: 270px;
+  }
+  
+  /* The "show" class is added to the filtered elements */
+  .show {
+    display: block;
+  }
+  
+  /* Style the buttons */
+  .btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #ddd;
+  }
+  
+  .btn.active {
+    background-color: #555;
+    color: white;
+  }
