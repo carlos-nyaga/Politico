@@ -989,3 +989,34 @@ input[type='submit'], button, [aria-label]{
 .nav a{
     color: #888;
 }
+
+.profile{
+    
+    width: 900px;
+    margin: 50px  auto;
+    border: 2px solid #ccc;
+    background-color:#333;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #fefefe;
+    padding: 20px;
+    height: 500px;;
+    box-shadow: 0.6rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+
+
+}
+.profile .right{
+    float: right;
+}
+.profile span{
+    color: #fefefe;
+}
+.profile img{
+    text-align: left;
+    background: black;
+    border-radius: 50%;
+    box-shadow: 0.6rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+    
+    
+
+}
