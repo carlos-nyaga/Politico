@@ -41,10 +41,10 @@ def get_parties():
 @bp.route('/parties/<int:id>', methods=['GET'])
 def get_party(id):
     party_get = Parties()
-    party = party_get.party_get(id)
+   
     return make_response(jsonify({
         "status" : 200,
-        "data": party
+        "data": party_get.party_get(id)
 
     }))
 
