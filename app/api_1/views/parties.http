@@ -1,0 +1,11 @@
+
+###Testing create party
+POST http://127.0.0.1:5000/api/v1/parties
+Content-Type: application/json
+
+    { 
+    "id" : "23",
+    "name": "Ian",
+    "hqAddress": "Andela",
+    "logoUrl": "images/images"
+}
