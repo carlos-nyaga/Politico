@@ -39,13 +39,22 @@ class Parties:
 
 
 
-    def party_get(self,i):
+    def party_get(self,id):
         self.parties = parties
         data = {
-            "id": parties[i-1]['party_id'],
-             "name" : parties[i-1]['party_name'],
-             "logoUrl": parties[i-1]['party_logo']
+            "id": parties[id-1]['party_id'],
+             "name" : parties[id-1]['party_name'],
+             "logoUrl": parties[id-1]['party_logo']
             }
+        return data
+
+    def party_edit(self, id ,name):
+        self.parties = parties
+        parties[id-1] ['party_name'] = name
+        data = {
+            "id" : parties[id-1]['party_id'],
+            "name" : parties[id-1]['party_name']
+        }
         return data
 
 
