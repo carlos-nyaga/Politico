@@ -30,4 +30,8 @@ def get_offices():
 
 @bp.route('/offices/<int:id>', methods =['GET'])
 def get_office(id):
-    pass
+    office = Offices().office_get(id)
+    return make_response(jsonify({
+        "status" : 200,
+        "data" : office
+    }))
