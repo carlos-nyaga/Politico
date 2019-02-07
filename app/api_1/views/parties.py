@@ -20,24 +20,42 @@ def  create_party():
         "status" : 201,
         "data" : [{
             "id" : created_party["party_id"],
-            "name" : created_party["party_name"]
+            "name" : createdarty["party_name"]
         }]    }))    
+
 
 
 @bp.route('/parties' , methods =['GET'])
 def get_parties():
-    pass
+    parties_get = Parties()
+    
+
+    return make_response(jsonify({
+        "status": 200,
+        "data": parties_get.parties
+    }))
+  
 
     
 
 @bp.route('/parties/<int:id>', methods=['GET'])
 def get_party(id):
-    pass
+    party_get = Parties()
+    party = party_get.party_get(id)
+    return make_response(jsonify({
+        "status" : 200,
+        "data": party
+
+    }))
 
 
 @bp.route('/parties/<int:id>', methods = ['PATCH'])
 def edit_party(id):
-    pass
+    data = request.get_json() or {}
+    id = data["id"]
+    new_mn
+    party_edit = Parties()
+    pa
 
 @bp.route('parties/<int:id>', methods = ['DELETE'])
 def delete_party(id):

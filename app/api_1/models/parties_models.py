@@ -1,4 +1,24 @@
-parties = []
+parties = [{
+            "party_code": 23,
+            "party_id": 1,
+            "party_name": "Annd",
+            "party_hq": "karen",
+            "party_logo": "Learning is a top"
+        },
+        {
+            "party_code": 24,
+            "party_id": 2,
+            "party_name": "Ian",
+            "party_hq": "karen",
+            "party_logo": "Dope king"
+        },
+        {
+            "party_code": 25,
+            "party_id": 3,
+            "party_name": "Jayson",
+            "party_hq": "karen",
+            "party_logo": " Shadow warrior"
+        }]
 
 
 class Parties:
@@ -16,6 +36,17 @@ class Parties:
         }
         self.parties.append(party)
         return party
+
+
+
+    def party_get(self,i):
+        self.parties = parties
+        data = {
+            "id": parties[i-1]['party_id'],
+             "name" : parties[i-1]['party_name'],
+             "logoUrl": parties[i-1]['party_logo']
+            }
+        return data
 
 
     
