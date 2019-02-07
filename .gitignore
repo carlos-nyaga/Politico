@@ -2,6 +2,7 @@
 7iC0
 .pytest_cache
 .vscode
+*.pyc
 *~
 __pycache__
 
