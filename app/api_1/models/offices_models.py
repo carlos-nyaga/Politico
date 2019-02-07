@@ -37,3 +37,6 @@ class Offices:
         }
         self.offices.append(office)
         return office
+
+    def office_get(self, id):
+        return self.offices[id-1]
