@@ -52,10 +52,13 @@ def get_party(id):
 @bp.route('/parties/<int:id>', methods = ['PATCH'])
 def edit_party(id):
     data = request.get_json() or {}
-    id = data["id"]
-    new_mn
-    party_edit = Parties()
-    pa
+    name = data["name"]
+    party_edit =Parties().party_edit(id,name)
+    
+    return make_response(jsonify({
+        "status": 200,
+        "data": party_edit
+    }))
 
 @bp.route('parties/<int:id>', methods = ['DELETE'])
 def delete_party(id):
