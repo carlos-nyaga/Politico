@@ -58,4 +58,6 @@ class Parties:
         return data
 
 
-    
+    def party_delete(self, id):
+        self.parties = parties
+        parties.pop(id-1)

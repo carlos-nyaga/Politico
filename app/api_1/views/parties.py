@@ -62,5 +62,9 @@ def edit_party(id):
 
 @bp.route('parties/<int:id>', methods = ['DELETE'])
 def delete_party(id):
-    pass
+    party_delete = Parties().party_delete(id)
+    return make_response(jsonify({
+        "status": 200,
+        "msg" : "Party deleted successfully"
+    }))
 
