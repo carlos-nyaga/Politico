@@ -8,13 +8,12 @@ from app.api_1.models.parties_models import Parties
 @bp.route('/parties', methods=['POST'])
 def  create_party():
     data = request.get_json()
-    party_code = data["id"]
     party_name = data["name"]
     hq_address = data["hqAddress"]
     logo_url = data["logoUrl"]
 
     instance = Parties()
-    created_party = instance.party_create(party_code, party_name, hq_address, logo_url)
+    created_party = instance.party_create(party_name, hq_address, logo_url)
     
     return make_response(jsonify({
         "status" : 201,
