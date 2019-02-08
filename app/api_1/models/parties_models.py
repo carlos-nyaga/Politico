@@ -6,9 +6,8 @@ class Parties:
         self.parties = parties
 
     
-    def party_create(self, id, name, hq_address, logo_url):
+    def party_create(self, name, hq_address, logo_url):
         party = {
-            "party_code": id,
             "party_id": len(self.parties)+1,
             "party_name": name,
             "party_hq": hq_address,
