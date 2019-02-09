@@ -27,20 +27,10 @@ def  create_party():
 
     if any(map(lambda x: x["party_name"] == data["name"], db)):
         return bad_request('already in use....please use a different name')
-
-
-    
-    
-    
-
     
     party_name = " ".join(str(data["name"]).split())
     hq_address = " ".join(str(data["name"]).split())
     logo_url = " ".join(str(data["name"]).split())
-
-    
-
-
 
     instance = Parties()
     created_party = instance.party_create(party_name, hq_address, logo_url)
