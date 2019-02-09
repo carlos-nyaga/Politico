@@ -19,7 +19,7 @@ def  create_party():
         "status" : 201,
         "data" : [{
             "id" : created_party["party_id"],
-            "name" : createdarty["party_name"]
+            "name" : created_party["party_name"]
         }]    }))    
 
 
