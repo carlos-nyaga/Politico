@@ -2,26 +2,45 @@ from flask import jsonify, request, make_response
 from app.api_1 import bp
 import json
 from app.api_1.models.parties_models import Parties
+from app.api_1.views.errors import bad_request
+import re
 
 
 
 @bp.route('/parties', methods=['POST'])
 def  create_party():
-    data = request.get_json()
-    party_code = data["id"]
-    party_name = data["name"]
-    hq_address = data["hqAddress"]
-    logo_url = data["logoUrl"]
+    data = request.get_json() or {}
+    db = Parties().parties
+   
+
+    if "name" not in data or "hqAddress" not in data or "logoUrl" not in data:
+        return bad_request('must include name, hqAddress and logoUrl fields')
+    
+    if any(map(lambda x: len("".join(str(x).split())) < 1, [data["name"], data["hqAddress"], data["logoUrl"]])):
+        return bad_request('Nice try...but no....we do not accept blanks')
+
+    elif any(map(lambda x: len("".join(str(x).split())) < 3, [data["name"], data["hqAddress"], data["logoUrl"]])):
+        return bad_request('minimum length should be 3 characters long')
+
+    if any(map(lambda x: "".join(str(x).split()).isalnum() == False, [data["name"], data["hqAddress"]])):
+        return bad_request('Only alphanumeric characters allowed')
+
+    if any(map(lambda x: x["party_name"] == data["name"], db)):
+        return bad_request('already in use....please use a different name')
+    
+    party_name = " ".join(str(data["name"]).split())
+    hq_address = " ".join(str(data["name"]).split())
+    logo_url = " ".join(str(data["name"]).split())
 
     instance = Parties()
-    created_party = instance.party_create(party_code, party_name, hq_address, logo_url)
+    created_party = instance.party_create(party_name, hq_address, logo_url)
     
     return make_response(jsonify({
         "status" : 201,
         "data" : [{
             "id" : created_party["party_id"],
-            "name" : createdarty["party_name"]
-        }]    }))    
+            "name" : created_party["party_name"]
+        }]    }),201)    
 
 
 
