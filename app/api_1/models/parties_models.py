@@ -45,6 +45,7 @@ class Parties:
              "name" : parties[id-1]['party_name'],
              "logoUrl": parties[id-1]['party_logo']
             }
+        
         return data
 
     def party_edit(self, id ,name):

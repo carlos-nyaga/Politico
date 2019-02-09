@@ -1,0 +1,26 @@
+language: python
+python:
+  - "3.6"
+
+
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+  - pip install coveralls
+
+
+# command to run tests
+script:
+  - pytest --cov=app tests/v1/
+
+  after_success:
+    - coveralls
+    
+    deploy:
+      provider: heroku
+      api_key:
+        secure: "dBfNRY6ROIBygxxMd7vszhd+aJSMDrEIvJctm5M/IS+fiKcJxuTLXSNbAHhOIOko1lZafGEobOzxMG0IJhUDKH3pNccs3clWnp8VWi1nThSLQ0S2bq1zgj+wKTrYU7GWUGm7zlmMSF2DlMIXDeR4qHtipyVvrm8ZOj83BZtQhRhT/ZLYxSp0P7EU+m2qj9yC9W+6nIufee0IUXfYN7zrq97C2ZBo+MWiGOec4C2z9d4xjgOf3WNsTE4MtAAGpWFTmTSvquQRr+kITw/ODAF5vmLbQQx2DIRnM5SEZqV2f9LVIMEiHETxTqe8loTFtjdE0/m2wM5CxsjP7T37/HVslkHS5WDmF9X6kDYuZFVHUx6dOgDTOIs9DUj+fVcw8jwtH1E4LLaD7e5z72I1zxfhVHd8cv4Fb0zjDuolcZyLoPmEQJ0pBEzgAxbAlfQspsX4vNxakUhheAPnhx4TCGam5IRTyWHviqlCNwaNed56J0fmmJkhI+kYYHaHuRdK5tVtFP6liLMUKEG3WrjQOIxv1RGC5HppWGkqHOTm5h7lUrcPWNsv37Dv0ewhFhy2RoyDBzlGZJ6niGJJwr1iIXaqfGzuS8mqbrGsHVogFcUSFKL55wM6JDwVL0PCbnaZTRCZPyxKRVNW4Qg6JtPpvHZ85+KgIpFllYY0rsJPLl9cDB0="
+      app: politico-api-v1
+      on:
+        repo: carlos-nyaga/Politico
+

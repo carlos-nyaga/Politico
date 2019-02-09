@@ -2,7 +2,9 @@
 7iC0
 .pytest_cache
 .vscode
+*.pyc
 *~
+Pipfile
 __pycache__
 
 # temporary files which can be created if a process still has a handle open of a deleted file
