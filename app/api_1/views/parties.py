@@ -3,7 +3,7 @@ from app.api_1 import bp
 import json
 from app.api_1.models.parties_models import Parties
 from app.api_1.views.errors import bad_request, error_response
-import re
+
 
 
 
