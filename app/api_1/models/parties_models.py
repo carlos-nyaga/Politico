@@ -1,19 +1,16 @@
 parties = [{
-            "party_code": 23,
             "party_id": 1,
             "party_name": "Annd",
             "party_hq": "karen",
             "party_logo": "Learning is a top"
         },
         {
-            "party_code": 24,
             "party_id": 2,
             "party_name": "Ian",
             "party_hq": "karen",
             "party_logo": "Dope king"
         },
         {
-            "party_code": 25,
             "party_id": 3,
             "party_name": "Jayson",
             "party_hq": "karen",
@@ -38,15 +35,27 @@ class Parties:
 
 
 
-    def party_get(self,id):
+    def party_get(self,id = None):
         self.parties = parties
-        data = {
-            "id": parties[id-1]['party_id'],
-             "name" : parties[id-1]['party_name'],
-             "logoUrl": parties[id-1]['party_logo']
-            }
-        
-        return data
+        if id:
+            data = {
+                "id": parties[id-1]['party_id'],
+                "name" : parties[id-1]['party_name'],
+                "logoUrl": parties[id-1]['party_logo']
+                }
+            return data
+
+        else:
+            data = []
+            for i in range(len(parties)):
+                party = {
+                    "id": parties[i]['party_id'],
+                    "name": parties[i]['party_name'],
+                    "logoUrl": parties[i]['party_logo']
+                }
+
+                data.append(party)
+            return data
 
     def party_edit(self, id ,name):
         self.parties = parties
