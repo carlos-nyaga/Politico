@@ -51,7 +51,7 @@ def get_parties():
 
     return make_response(jsonify({
         "status": 200,
-        "data": parties_get.parties
+        "data": parties_get.party_get()
     }))
   
 

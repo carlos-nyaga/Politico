@@ -36,7 +36,7 @@ class TestPoliticalParties(TestCase):
             "logoUrl": "http://s4t.image.jpg"}
         response = self.client.post(
         '/api/v1/parties', json=self.political_party)
-        self.assertIn("id", str(response.data))
+        self.assertIn("LastOne", str(response.data))
         
 
     def test_party_created_id_data_key(self):
@@ -64,19 +64,32 @@ class TestPoliticalParties(TestCase):
         response = self.client.get('/api/v1/parties')
         self.assertIn('Damiun', str(response.data))
         
-"""
-    def test_get_polotical_parties(self):
-      
-        #Test Political Parties get
-      
+
+    def test_get_political_parties(self):
+        """
+        Test Political Parties get
+        """
         Parties().party_create(
-        "Team", "Nakuru", "shutterspeeed.com")
+        "D0p3", "Nakuru", "shutterspeeed.com")
         response = self.client.get('/api/v1/parties')
         self.assertEqual(response.status_code, 200)
-        self.assertIn('Damiun', str(response.data))
+        self.assertIn('D0p3', str(response.data))
+
+    def test_get_id_data_key(self):
+        response = self.client.get('/api/v1/parties')
+        self.assertIn("id", str(response.data))
+
+    def test_get_logourl_data_key(self):
+        response = self.client.get('/api/v1/parties')
+        self.assertIn("logoUrl", str(response.data))
+    
+    def test_get_hqaddress_data_key(self):
+        response = self.client.get('/api/v1/parties')
+        self.assertNotIn("hqAddress", str(response.data), msg="hqAddress should not be in response")
 
 
 
+"""
     def test_get_specific_office_return_data(self):
       
         #Test Political Offices Get Specific
