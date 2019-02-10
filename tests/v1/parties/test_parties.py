@@ -127,29 +127,47 @@ class TestPoliticalParties(TestCase):
 
     
 
-"""
+
     def test_edit_polotical_party(self):
-        
-        #Test Political Parties edit
-       
-        political_party = Parties().party_create(
-        "Sample", "Some Address", "example.com")
-        response = self.client.get('/api/v1/parties')
-        self.assertEqual(response.status_code, 200)
-        self.assertIn('Sample Get', str(response.data))
-
+        """
+        Test Edit Specific Political Parties get
+        """
+        partyedit= Parties().party_create(
+        "partybefore", "AS", "ee.com"
+        )
         editted_party_data = {
-            "name": "Sample Edit",
-            "hqAddress": "Some Address",
-            "logoUrl": "example.com"}
+            "name": "partyafter"}
 
+        response = self.client.patch('/api/v1/parties/{}'.format(partyedit['party_id']), json=editted_party_data)
+        self.assertIn('partyafter', str(response.data))
+
+    def test_edit_status_code(self):
+        edit = {
+            "name": "donateam"
+        }
         response = self.client.patch(
-        '/api/v1/parties/' + str(political_party['party_id']), json=editted_party_data)
+        '/api/v1/parties/3', json=edit)
         self.assertEqual(response.status_code, 200)
-        response = self.client.get('/api/v1/parties')
-        self.assertNotIn('Sample Get', str(response.data))
-        self.assertIn('Sample Edit', str(response.data))
 
+    def test_party_name_change(self):
+        partyedit= Parties().party_create(
+        "D3m0part", "AS", "ee.com"
+        )
+        edit = {
+            "name": "D3m0t3am"
+        }
+        response = self.client.patch('/api/v1/parties/{}'.format(partyedit["party_id"]), json=edit)
+        response = self.client.get('/api/v1/parties')
+        self.assertNotIn('D3m0part', str(response.data))
+
+    def test_edit_error_response(self):
+        edit = {
+            "name": "donateam"
+        }
+        response = self.client.patch('/api/v1/parties/7', json=edit)
+        self.assertEqual(response.status_code, 404)
+
+"""
     def test_delete_polotical_party(self):
        
         #Test Political Parties delete
