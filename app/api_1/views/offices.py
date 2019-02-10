@@ -48,8 +48,10 @@ def get_offices():
 
 @bp.route('/offices/<int:id>', methods =['GET'])
 def get_office(id):
-    office = Offices().office_get(id)
+    office = Offices()
+    if not any(map(lambda x: x["office_id"] == id,office.offices)):
+            return error_response(404,'Sorry...Office not found!')
     return make_response(jsonify({
         "status" : 200,
-        "data" : office
+        "data" : office.office_get(id)
     }))

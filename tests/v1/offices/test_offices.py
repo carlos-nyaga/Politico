@@ -62,7 +62,9 @@ class TestPoliticalOffices(TestCase):
       
 
     def test_get_political_offices(self):
-        
+        """
+        Test Political Offices get
+        """
         self.db.office_create(
         "D0p3", "local government")
         response = self.client.get('/api/v1/offices')
@@ -82,10 +84,12 @@ class TestPoliticalOffices(TestCase):
         self.assertIn("type", str(response.data), msg="type should be in response")
 
 
-"""
+
 
     def test_get_specific_offices_return_data(self):
-        
+        """
+        Test Specific Political Office get
+        """
         self.db.office_create(
         "Paclo", "executive"
         )
@@ -94,7 +98,7 @@ class TestPoliticalOffices(TestCase):
         "officestwo", "local"
         )
 
-        response = self.client.get('/api/v1/offices/{}'.format(offices2['offices_id']))
+        response = self.client.get('/api/v1/offices/{}'.format(office2['office_id']))
         self.assertIn('officestwo', str(response.data))
 
     def test_get_specific_offices_status_code(self):
@@ -119,7 +123,7 @@ class TestPoliticalOffices(TestCase):
 
     
 
-
+"""
     def test_edit_polotical_offices(self):
 
         officesedit= self.db.office_create(
