@@ -2,7 +2,7 @@ from flask import jsonify, request, make_response
 from app.api_1 import bp
 import json
 from app.api_1.models.parties_models import Parties
-from app.api_1.views.errors import bad_request
+from app.api_1.views.errors import bad_request, error_response
 import re
 
 
@@ -60,6 +60,11 @@ def get_parties():
 @bp.route('/parties/<int:id>', methods=['GET'])
 def get_party(id):
     party_get = Parties()
+    if type(id) != int:
+        return bad_request('Party ID needs to be of type int')
+    elif id > len(party_get.parties):
+        return error_response(404,'Sorry...Party not found!')
+
    
     return make_response(jsonify({
         "status" : 200,
