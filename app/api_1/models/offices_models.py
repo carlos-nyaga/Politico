@@ -38,7 +38,7 @@ class Offices:
         self.offices.append(office)
         return office
 
-    def office_get(self, id):
+    def office_get(self, id = None):
         if id:
             data = {
                 "id": offices[id-1]['office_id'],
@@ -57,4 +57,4 @@ class Offices:
                 }
 
                 data.append(office)
-                return data
+            return data

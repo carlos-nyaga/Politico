@@ -43,7 +43,7 @@ def create_office():
 def get_offices():
     return make_response(jsonify({
         "status" : 200,
-        "data" : Offices().offices
+        "data" : Offices().office_get()
     }))
 
 @bp.route('/offices/<int:id>', methods =['GET'])
