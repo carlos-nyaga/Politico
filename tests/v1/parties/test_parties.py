@@ -1,7 +1,6 @@
 """
 Tests for Political Parties
 """
-from flask import jsonify
 import os
 from app import create_app
 from unittest import TestCase
