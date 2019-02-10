@@ -39,4 +39,22 @@ class Offices:
         return office
 
     def office_get(self, id):
-        return self.offices[id-1]
+        if id:
+            data = {
+                "id": offices[id-1]['office_id'],
+                "name" : offices[id-1]['office_name'],
+                "type": offices[id-1]['office_type']
+                }
+            return data
+
+        else:
+            data = []
+            for i in range(len(offices)):
+                office = {
+                    "id": offices[i]['office_id'],
+                    "name": offices[i]['office_name'],
+                    "type": offices[i]['office_type']
+                }
+
+                data.append(office)
+                return data
