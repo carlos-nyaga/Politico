@@ -60,10 +60,8 @@ def get_parties():
 @bp.route('/parties/<int:id>', methods=['GET'])
 def get_party(id):
     party_get = Parties()
-    if type(id) != int:
-        return bad_request('Party ID needs to be of type int')
-    elif id > len(party_get.parties):
-        return error_response(404,'Sorry...Party not found!')
+    if not any(map(lambda x: x["party_id"] == id, party_get.parties)):
+            return error_response(404,'Sorry...Party not found!')
 
    
     return make_response(jsonify({
@@ -76,9 +74,10 @@ def get_party(id):
 @bp.route('/parties/<int:id>', methods = ['PATCH'])
 def edit_party(id):
     data = request.get_json() or {}
+    db = Parties()
 
-    if id > len(Parties().parties):
-        return error_response(404,'Sorry...Party not found!')
+    if not any(map(lambda x: x["party_id"] == id, db.parties)):
+            return error_response(404,'Sorry...Party not found!')
     if "name" not in data:
             return bad_request('must include name field')
     if any(map(lambda x: len("".join(str(x).split())) < 1, [data["name"]])):
@@ -93,7 +92,7 @@ def edit_party(id):
     if any(map(lambda x: x["party_name"] == data["name"], Parties().parties)):
         return bad_request('already in use....please use a different name')
     name = data["name"]
-    party_edit =Parties().party_edit(id,name)
+    party_edit =db.party_edit(id,name)
     
     return make_response(jsonify({
         "status": 200,
@@ -102,7 +101,10 @@ def edit_party(id):
 
 @bp.route('parties/<int:id>', methods = ['DELETE'])
 def delete_party(id):
-    party_delete = Parties().party_delete(id)
+    db = Parties()
+    if not any(map(lambda x: x["party_id"] == id, db.parties)):
+            return bad_request('Sorry...Party not found!')
+    db.party_delete(id)
     return make_response(jsonify({
         "status": 200,
         "msg" : "Party deleted successfully"
