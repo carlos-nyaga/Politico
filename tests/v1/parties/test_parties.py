@@ -167,22 +167,21 @@ class TestPoliticalParties(TestCase):
         response = self.client.patch('/api/v1/parties/7', json=edit)
         self.assertEqual(response.status_code, 404)
 
-"""
-    def test_delete_polotical_party(self):
-       
-        #Test Political Parties delete
-        
+    def test_delete_party_status_code(self):
+        """
+        Test Edit Specific Political Parties get
+        """
         party = Parties().party_create(
         "Sample Get", "Some Address", "example.com")
-        response = self.client.get('/api/v1/parties')
-        self.assertEqual(response.status_code, 200)
-        self.assertIn('Sample Get', str(response.data))
+ 
 
-        self.client.delete('/api/v1/parties/{}'.format(party["party_id"]) )
+        response = self.client.delete('/api/v1/parties/{}'.format(party["party_id"]) )
         self.assertEqual(response.status_code, 200)
 
-        response = self.client.get('/api/v1/parties')
-        self.assertEqual(response.status_code, 200)
-        self.assertNotIn('Sample Get', str(response.data))"""
+    def test_delete_party(self):
+        party = Parties().party_create(
+        "Sample Get", "Some Address", "example.com")
+        response = self.client.delete('/api/v1/parties/{}'.format(party["party_id"]) )
+        self.assertNotIn('Sample Get', str(response.data))
 
         
