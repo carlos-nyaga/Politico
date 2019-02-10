@@ -76,6 +76,22 @@ def get_party(id):
 @bp.route('/parties/<int:id>', methods = ['PATCH'])
 def edit_party(id):
     data = request.get_json() or {}
+
+    if id > len(Parties().parties):
+        return error_response(404,'Sorry...Party not found!')
+    if "name" not in data:
+            return bad_request('must include name field')
+    if any(map(lambda x: len("".join(str(x).split())) < 1, [data["name"]])):
+        return bad_request('Nice try...but no....we do not accept blanks')
+
+    elif any(map(lambda x: len("".join(str(x).split())) < 3, [data["name"]])):
+        return bad_request('minimum length should be 3 characters long')
+
+    if any(map(lambda x: "".join(str(x).split()).isalnum() == False, [data["name"]])):
+        return bad_request('Only alphanumeric characters allowed')
+
+    if any(map(lambda x: x["party_name"] == data["name"], Parties().parties)):
+        return bad_request('already in use....please use a different name')
     name = data["name"]
     party_edit =Parties().party_edit(id,name)
     
