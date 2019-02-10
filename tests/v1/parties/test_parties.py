@@ -89,39 +89,45 @@ class TestPoliticalParties(TestCase):
 
 
 
+
+    def test_get_specific_party_return_data(self):
+        """
+        Test Specific Political Parties get
+        """
+        Parties().party_create(
+        "partyone", "SA", "exom.kkp"
+        )
+
+        party2 = Parties().party_create(
+        "partytwo", "AS", "ee.com"
+        )
+
+        response = self.client.get('/api/v1/parties/{}'.format(party2['party_id']))
+        self.assertIn('partytwo', str(response.data))
+
+    def test_get_specific_party_status_code(self):
+        response = self.client.get('/api/v1/parties/1')
+        self.assertEqual(response.status_code, 200)
+
+    def test_get_error_response(self):
+        response = self.client.get('/api/v1/parties/5')
+        self.assertEqual(response.status_code, 404)
+
+    def test_get_specifig_id_data_key(self):
+        response = self.client.get('/api/v1/parties/1')
+        self.assertIn("id", str(response.data))
+
+    def test_get_specific_logourl_data_key(self):
+        response = self.client.get('/api/v1/parties/1')
+        self.assertIn("logoUrl", str(response.data))
+    
+    def test_get_specific_hqaddress_data_key(self):
+        response = self.client.get('/api/v1/parties/1')
+        self.assertNotIn("hqAddress", str(response.data), msg="hqAddress should not be in response")
+
+    
+
 """
-    def test_get_specific_office_return_data(self):
-      
-        #Test Political Offices Get Specific
-    
-        Parties().party_create(
-        "anc", "SA", "exom.kkp"
-        )
-
-        political_party = Parties().party_create(
-        "can", "AS", "ee.com"
-        )
-
-        response = self.client.get('/api/v1/parties/' + str(political_party['party_id']))
-        self.assertIn('can', str(response.data))
-
-    def test_get_specific_office_return_true_data(self):
-    
-        #Test Political Offices Get Specific
-        
-        Parties().party_create(
-        "anc", "SA", "exom.kkp"
-        )
-
-        political_party = Parties().party_create(
-        "can", "AS", "ee.com"
-        )
-
-        response = self.client.get('/api/v1/parties/' + str(political_party['party_id']))
-        self.assertNotIn('anc', str(response.data))
-
-
-
     def test_edit_polotical_party(self):
         
         #Test Political Parties edit
