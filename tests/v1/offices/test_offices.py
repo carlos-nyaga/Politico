@@ -60,7 +60,7 @@ class TestPoliticalOffices(TestCase):
         response = self.client.get('/api/v1/offices')
         self.assertIn('Tano5', str(response.data))
       
-"""
+
     def test_get_political_offices(self):
         
         self.db.office_create(
@@ -76,13 +76,13 @@ class TestPoliticalOffices(TestCase):
     def test_get_logourl_data_key(self):
         response = self.client.get('/api/v1/offices')
         self.assertIn("name", str(response.data))
-    
-    def test_get_hqaddress_data_key(self):
+
+    def test_get_type_data_key(self):
         response = self.client.get('/api/v1/offices')
         self.assertIn("type", str(response.data), msg="type should be in response")
 
 
-
+"""
 
     def test_get_specific_offices_return_data(self):
         
