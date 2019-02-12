@@ -32,7 +32,7 @@ def create_office():
     
     return make_response(jsonify({
         "status" : 201,
-        "data" : [{
+        "office" : [{
             "id" : created_office["office_id"],
             "type": created_office["office_type"],
             "name" : created_office["office_name"]
@@ -43,7 +43,7 @@ def create_office():
 def get_offices():
     return make_response(jsonify({
         "status" : 200,
-        "data" : Offices().office_get()
+        "offices" : Offices().office_get()
     }))
 
 @bp.route('/offices/<int:id>', methods =['GET'])
@@ -53,5 +53,5 @@ def get_office(id):
             return error_response(404,'Sorry...Office not found!')
     return make_response(jsonify({
         "status" : 200,
-        "data" : office.office_get(id)
+        "office" : office.office_get(id)
     }))

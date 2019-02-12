@@ -37,7 +37,7 @@ def  create_party():
     
     return make_response(jsonify({
         "status" : 201,
-        "data" : [{
+        "party" : [{
             "id" : created_party["party_id"],
             "name" : created_party["party_name"]
         }]    }),201)    
@@ -51,7 +51,7 @@ def get_parties():
 
     return make_response(jsonify({
         "status": 200,
-        "data": parties_get.party_get()
+        "parties": parties_get.party_get()
     }))
   
 
@@ -66,7 +66,7 @@ def get_party(id):
    
     return make_response(jsonify({
         "status" : 200,
-        "data": party_get.party_get(id)
+        "party": party_get.party_get(id)
 
     }))
 
@@ -96,7 +96,7 @@ def edit_party(id):
     
     return make_response(jsonify({
         "status": 200,
-        "data": party_edit
+        "party": party_edit
     }))
 
 @bp.route('parties/<int:id>', methods = ['DELETE'])
