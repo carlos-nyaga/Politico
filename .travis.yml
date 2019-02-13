@@ -9,6 +9,13 @@ install:
   - pip install coveralls
 
 
+services:
+  - postgresql
+
+before_script:
+  - psql -c "CREATE DATABASE politestdb;" -U postgres
+  - psql -c "CREATE USER tico WITH PASSWORD 'password';" -U postgres
+
 # command to run tests
 script:
   - pytest --cov=app
@@ -16,6 +23,5 @@ script:
   
 after_success:
   - coveralls
-
 
 

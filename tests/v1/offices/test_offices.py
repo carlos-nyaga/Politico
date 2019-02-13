@@ -1,7 +1,7 @@
 """
 Tests for Political Offices
 """
-import os
+
 from app import create_app
 from unittest import TestCase
 from app.api_1.models.offices_models import Offices

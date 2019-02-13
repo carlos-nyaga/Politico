@@ -10,5 +10,7 @@ def create_app(config_name):
     from app.api_1 import bp as api_1_bp
     app.register_blueprint(api_1_bp, url_prefix= '/api/v1')
 
+    from app.api_2 import bp2 as api_2_bp
+    app.register_blueprint(api_2_bp, url_prefix = '/api/v2')
     return app
 
