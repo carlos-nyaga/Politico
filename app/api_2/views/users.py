@@ -39,3 +39,30 @@ def create_user():
        "status" : 201,
         "user" : [created_user]
         }),201)
+
+
+@bp2.route('/auth/login', methods = ['POST'])
+def login():
+    data = request.get_json() or {}
+    if "password" not in data or "email" not in data:
+        return bad_request('must include name and email fields')
+    
+    if any(map(lambda x: len("".join(str(x).split())) < 1, [data["password"], data["email"]])):
+        return bad_request('Nice try...but no....we do not accept blanks')
+
+    elif any(map(lambda x: len("".join(str(x).split())) < 3, [data["password"], data["email"]])):
+        return bad_request('minimum length should be 3 characters long')    
+
+    email = data['email']
+    password = data['password']
+
+    token = Users().login(email,password)
+    return make_response(jsonify({
+       "status" : 200,
+       "user" : [{
+           "token": token,
+           "user" : []
+
+       }]
+        
+        }),200)
