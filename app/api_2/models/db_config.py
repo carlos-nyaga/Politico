@@ -32,3 +32,4 @@ def destroy_db():
     for query in queries:
         cur.execute(query)
     conn.commit()
+    conn.close()
