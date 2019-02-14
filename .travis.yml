@@ -9,6 +9,20 @@ install:
   - pip install coveralls
 
 
+services:
+  - postgresql
+
+before_script:
+  - psql -c "CREATE DATABASE politestdb;" -U postgres
+  - psql -c "CREATE USER tico WITH PASSWORD 'password';" -U postgres
+
+env:
+  - DATABASE_NAME="politestdb"
+  - DATABASE_USER="tico"
+  - DATABASE_PASS="password"
+  - DATABASE_HOST="127.0.0.1"
+  - DATABASE_PORT="5432"
+  - DATABASE_TEST_NAME="politestdb"
 # command to run tests
 script:
   - pytest --cov=app
@@ -16,6 +30,5 @@ script:
   
 after_success:
   - coveralls
-
 
 
