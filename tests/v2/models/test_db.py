@@ -1,4 +1,4 @@
-import psycopg2
+
 from app.api_2.models.db_config import init_db
 
 def test_connection():
