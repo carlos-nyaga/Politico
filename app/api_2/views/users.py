@@ -3,7 +3,7 @@ from app.api_2 import bp2
 import json
 from app.api_2.models.user_models import Users
 from app.api_2.views.errors import bad_request
-from app.api_2.views.validations import validate_isalphanumeric
+
 
 
 @bp2.route('/auth/signup', methods = ['POST'])
