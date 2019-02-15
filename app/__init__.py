@@ -1,8 +1,10 @@
 from flask import Flask
 from config import config
+from flask.ext.heroku import Heroku
 
 def create_app(config_name):
     app = Flask(__name__)
+    heroku = Heroku(app)
     app.config.from_object(config[config_name])
     config[config_name].init_app(app)
 
