@@ -18,6 +18,7 @@ docopt==0.6.2
 ed25519ll==0.6
 entrypoints==0.3
 Flask==1.0.2
+flask-heroku==0.1.9
 greenlet==0.4.15
 gunicorn==19.9.0
 heroku==0.1.4
@@ -40,6 +41,7 @@ mccabe==0.6.1
 mock==2.0.0
 more-itertools==5.0.0
 numpy==1.16.1
+objectpath==0.6.1
 ordereddict==1.1
 parso==0.3.3
 pathtools==0.1.2
@@ -70,7 +72,6 @@ python-dateutil==1.5
 python-dotenv==0.10.1
 python-memcached==1.59
 pyxdg==0.26
-PyYAML==3.13
 redis==3.1.0
 requests==2.21.0
 SecretStorage==3.1.1
