@@ -2,12 +2,11 @@ from flask import jsonify, make_response, request
 from app.api_2 import bp2
 import json
 from app.api_2.models.user_models import Users
-from app.api_2.views.errors import bad_request
-
-
+from app.api_2.views.errors import bad_request, error_response
 
 @bp2.route('/auth/signup', methods = ['POST'])
 def create_user():
+    user = Users()
     data = request.get_json() or {}
     fields = ["first_name", "last_name", "other_name","email", "phone_number", "passport_url", "password", "isadmin"]
     for field in fields:
@@ -33,11 +32,15 @@ def create_user():
     password = data['password']
     isadmin = data['isadmin']
 
-    created_user = Users().user_create(fname, lname, oname, email, phoneNo, passport,password, isadmin)
+    created_user = user.user_create(fname, lname, oname, email, phoneNo, passport,password, isadmin)
+
 
     return make_response(jsonify({
        "status" : 201,
-        "user" : [created_user]
+        "user" : [{
+            "token": user.auth_token_encode(created_user[0]),
+            "user" : user.to_dict(created_user)
+        }]
         }),201)
 
 

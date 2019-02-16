@@ -41,6 +41,7 @@ mccabe==0.6.1
 mock==2.0.0
 more-itertools==5.0.0
 numpy==1.16.1
+objectpath==0.6.1
 ordereddict==1.1
 parso==0.3.3
 pathtools==0.1.2
