@@ -46,6 +46,7 @@ def create_user():
 
 @bp2.route('/auth/login', methods = ['POST'])
 def login():
+    user = Users()
     data = request.get_json() or {}
     if "password" not in data or "email" not in data:
         return bad_request('must include name and email fields')
@@ -59,13 +60,11 @@ def login():
     email = data['email']
     password = data['password']
 
-    token = Users().login(email,password)
+    token = user.login(email,password)
     return make_response(jsonify({
        "status" : 200,
        "user" : [{
-           "token": token,
-           "user" : []
+           "token": user.auth_token_encode(token[0]),
+           "user" : user.to_dict(token)
 
-       }]
-        
-        }),200)
+       }]}),200)
