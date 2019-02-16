@@ -41,42 +41,35 @@ class TestUsers(TestCase):
             self.client = None
             destroy_db()
 
-    def test_party_created_status_code(self):
+    def test_user_created_status_code(self):
         """
         Test User create
         """
-        response = self.client.post(
-        '/api/v2/auth/signup', json=self.new_user)
+        response = self.client.post('/api/v2/auth/signup', json=self.new_user)
         self.assertIn("John", str(response.data))
 
-    def test_party_created_id_data_key(self):
-        response = self.client.post(
-        '/api/v2/auth/signup', json=self.new_user)
+    def test_user_created_id_data_key(self):
+        response = self.client.post('/api/v2/auth/signup', json=self.new_user)
         self.assertIn("id", str(response.data))
     
-    def test_party_created_email_data_key(self):
-        response = self.client.post(
-        '/api/v2/auth/signup', json=self.new_user)
+    def test_user_created_email_data_key(self):
+        response = self.client.post('/api/v2/auth/signup', json=self.new_user)
         self.assertIn("email", str(response.data))
     
-    def test_party_created_fname_data_key(self):
-        response = self.client.post(
-        '/api/v2/auth/signup', json=self.new_user)
+    def test_user_created_fname_data_key(self):
+        response = self.client.post('/api/v2/auth/signup', json=self.new_user)
         self.assertIn("first_name", str(response.data))
     
-    def test_party_created_isadmin_data_key(self):
-        response = self.client.post(
-        '/api/v2/auth/signup', json=self.new_user)
+    def test_user_created_isadmin_data_key(self):
+        response = self.client.post('/api/v2/auth/signup', json=self.new_user)
         self.assertIn("isadmin", str(response.data))
         
-    def test_party_created_token_data_key(self):
-        response = self.client.post(
-        '/api/v2/auth/signup', json=self.new_user)
+    def test_user_created_token_data_key(self):
+        response = self.client.post('/api/v2/auth/signup', json=self.new_user)
         self.assertIn("token", str(response.data))
     
-    def test_party_password_data_key(self):
-        response = self.client.post(
-        '/api/v2/auth/signup', json=self.new_user)
+    def test_user_password_data_key(self):
+        response = self.client.post('/api/v2/auth/signup', json=self.new_user)
         self.assertNotIn("password", str(response.data), msg="password should not be in response")
 
     def test_encode_auth_token(self):

@@ -22,7 +22,6 @@ env:
   - DATABASE_PASS="password"
   - DATABASE_HOST="127.0.0.1"
   - DATABASE_PORT="5432"
-  - DATABASE_TEST_NAME="politestdb"
   - SECRET_KEY="b'\xd1\x01\\\xda\xb4\x93\x7f\x82\xd2-\xbbF\xba\xb3\xfc\x9c\xe0\xdb\x8c9$\x992\x1d'"
   
 # command to run tests

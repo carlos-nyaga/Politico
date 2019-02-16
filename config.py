@@ -16,7 +16,7 @@ class DevelopmentConfig(Config):
 class TestingConfig(Config):
     DEBUG = True
     TESTING = True
-    DATABASE_NAME = os.getenv('DATABASE_TEST_NAME')
+    DB_NAME = os.getenv('DATABASE_TEST_NAME')
     SECRET_KEY = os.getenv('SECRET_KEY', 'my_precious')
 
 class ProductionConfig(Config):
