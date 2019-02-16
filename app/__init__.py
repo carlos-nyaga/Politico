@@ -1,6 +1,5 @@
 from flask import Flask, jsonify
 from config import config
-from flask.ext.heroku import Heroku
 
 def error_response(status_code, message = None):
     payload = {
@@ -22,7 +21,6 @@ def invalid_method(e):
 
 def create_app(config_name):
     app = Flask(__name__)
-    heroku = Heroku(app)
     app.config.from_object(config[config_name])
     config[config_name].init_app(app)
     

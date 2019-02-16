@@ -60,8 +60,7 @@ class Users:
         conn = init_db(self.user_table)
         cur = conn.cursor()
         cur.execute(""" INSERT INTO users (first_name, last_name, other_name, email, phone_number, passport_url, password, isadmin)
-        VALUES('{}','{}','{}','{}','{}','{}','{}','{}')  RETURNING user_id, first_name, email, isadmin; """.format(fname, lname, oname, email, phoneNo,passport, Users().hash(password), isadmin))
-
+        VALUES('{}','{}','{}','{}','{}','{}','{}','{}')  RETURNING user_id, first_name, email, isadmin; """.format(fname, lname, oname, email, phoneNo,passport, password, isadmin))
         user = cur.fetchone()
         conn.commit()
         conn.close()
@@ -70,10 +69,10 @@ class Users:
     def login(self, email, password):
         conn = connection()
         cur = conn.cursor()
-        id = cur.execute(""" SELECT user_id FROM users WHERE users.email = '{}' AND users.password = '{}'; """.format(email, Users().hash(password)))
-        conn.commit()
+        cur.execute(""" SELECT user_id, first_name, email, isadmin FROM users WHERE email = '{}' AND password = '{}'; """.format(email, password))
+        user = cur.fetchall()
         conn.close()
-        return Users().auth_token_encode(id)
+        return user[0]
 
     
 

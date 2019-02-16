@@ -24,17 +24,12 @@ class TestUsers(TestCase):
             "password": "password",
             "isadmin": "True" 
             }
-        self.user_table =  """ CREATE TABLE IF NOT EXISTS users(
-                    user_id serial PRIMARY KEY NOT NULL,
-                    first_name VARCHAR(50) NOT NULL,
-                    last_name VARCHAR(50) NOT NULL,
-                    other_name VARCHAR(50) NOT NULL,
-                    email VARCHAR(50) NOT NULL UNIQUE,
-                    phone_number VARCHAR(50) NOT NULL UNIQUE,
-                    passport_url VARCHAR(50) NOT NULL,
-                    password VARCHAR(500) NOT NULL,
-                    ispolitician BOOLEAN,
-                    isadmin BOOLEAN);"""
+        self.login_user = {
+            "email": "john@janedoe.com",
+            "password": "password"
+            }
+        self.response = self.client.post('/api/v2/auth/signup', json=self.new_user)
+
 
     def tearDown(self):
             self.app = None
@@ -45,34 +40,58 @@ class TestUsers(TestCase):
         """
         Test User create
         """
-        response = self.client.post('/api/v2/auth/signup', json=self.new_user)
-        self.assertIn("John", str(response.data))
+        self.assertIn("John", str(self.response.data))
 
     def test_user_created_id_data_key(self):
-        response = self.client.post('/api/v2/auth/signup', json=self.new_user)
-        self.assertIn("id", str(response.data))
-    
+        self.assertIn("id", str(self.response.data))
+
     def test_user_created_email_data_key(self):
-        response = self.client.post('/api/v2/auth/signup', json=self.new_user)
-        self.assertIn("email", str(response.data))
+        self.assertIn("email", str(self.response.data))
     
     def test_user_created_fname_data_key(self):
-        response = self.client.post('/api/v2/auth/signup', json=self.new_user)
-        self.assertIn("first_name", str(response.data))
+        self.assertIn("first_name", str(self.response.data))
     
     def test_user_created_isadmin_data_key(self):
-        response = self.client.post('/api/v2/auth/signup', json=self.new_user)
-        self.assertIn("isadmin", str(response.data))
+        self.assertIn("isadmin", str(self.response.data))
         
     def test_user_created_token_data_key(self):
-        response = self.client.post('/api/v2/auth/signup', json=self.new_user)
-        self.assertIn("token", str(response.data))
+        self.assertIn("token", str(self.response.data))
     
     def test_user_password_data_key(self):
-        response = self.client.post('/api/v2/auth/signup', json=self.new_user)
-        self.assertNotIn("password", str(response.data), msg="password should not be in response")
+        self.assertNotIn("password", str(self.response.data), msg="password should not be in response")
 
     def test_encode_auth_token(self):
         token = (Users().auth_token_encode(1))
         self.assertTrue(isinstance(token, bytes))
         
+    
+    def test_user_login_status_code(self):
+        """
+        Test User login
+        """
+        response = self.client.post('/api/v2/auth/login', json=self.login_user)
+        self.assertIn("John", str(response.data))
+
+    def test_user_login_id_data_key(self):
+        response = self.client.post('/api/v2/auth/login', json=self.login_user)
+        self.assertIn("id", str(response.data))
+    
+    def test_user_login_email_data_key(self):
+        response = self.client.post('/api/v2/auth/login', json=self.login_user)
+        self.assertIn("email", str(response.data))
+    
+    def test_user_login_fname_data_key(self):
+        response = self.client.post('/api/v2/auth/login', json=self.login_user)
+        self.assertIn("first_name", str(response.data))
+    
+    def test_user_login_isadmin_data_key(self):
+        response = self.client.post('/api/v2/auth/login', json=self.login_user)
+        self.assertIn("isadmin", str(response.data))
+        
+    def test_user_login_token_data_key(self):
+        response = self.client.post('/api/v2/auth/login', json=self.login_user)
+        self.assertIn("token", str(response.data))
+    
+    def test_user_logn_password_data_key(self):
+        response = self.client.post('/api/v2/auth/login', json=self.login_user)
+        self.assertNotIn("password", str(response.data), msg="password should not be in response")
