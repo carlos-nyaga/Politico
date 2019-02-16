@@ -1,12 +1,9 @@
 import psycopg2
-import psycopg2.extras
-import os
 from app.api_2.models.connection import connection
 
 
 
 def init_db(query):
-    destroy_db()
     conn = connection()
     print("init_db Opened database succesfully")
     cur = conn.cursor()
@@ -23,9 +20,9 @@ def destroy_db():
     print("Destroy_db Opened database succesfully")
     cur = conn.cursor()
 
-    users = """ DROP TABLE IF EXISTS users; """
-    parties = """ DROP TABLE IF EXISTS parties; """
-    offices = """ DROP TABLE IF EXISTS offices; """
+    users = """ DROP TABLE IF EXISTS users CASCADE; """
+    parties = """ DROP TABLE IF EXISTS parties CASCADE; """
+    offices = """ DROP TABLE IF EXISTS offices CASCADE; """
 
     queries = [users, parties, offices]
 
