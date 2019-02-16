@@ -1,4 +1,4 @@
-from app.api_2.models.db_config import init_db
+from app.api_2.models.db_config import init_db, destroy_db
 from werkzeug.security import generate_password_hash
 import jwt, datetime, time,os
 from app.api_2.models.connection import connection
@@ -19,6 +19,7 @@ class Users:
     def hash(self, password):
        hashed_pass = generate_password_hash(password)
        return hashed_pass
+       
     def to_dict(self, user):
         data = {
         'id': user[0],
@@ -55,15 +56,16 @@ class Users:
             return 'Invalid token. Please log in again.'
 
     def user_create(self, fname, lname, oname,email,phoneNo, passport, password, isadmin ):
+        destroy_db()
         conn = init_db(self.user_table)
         cur = conn.cursor()
         cur.execute(""" INSERT INTO users (first_name, last_name, other_name, email, phone_number, passport_url, password, isadmin)
-        VALUES('{}','{}','{}','{}','{}','{}','{}','{}')  RETURNING user_id, first_name, email, isadmin; """.format(fname, lname, oname, email, phoneNo,passport, Users.hash(password), isadmin))
+        VALUES('{}','{}','{}','{}','{}','{}','{}','{}')  RETURNING user_id, first_name, email, isadmin; """.format(fname, lname, oname, email, phoneNo,passport, Users().hash(password), isadmin))
 
         user = cur.fetchone()
         conn.commit()
         conn.close()
-        return Users().to_dict(user)
+        return user
 
     def login(self, email, password):
         conn = connection()
