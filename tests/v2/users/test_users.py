@@ -1,7 +1,7 @@
 """
 Tests for Users
 """
-import os ,json, objectpath
+import os ,json
 from app import create_app
 from unittest import TestCase
 from app.api_2.models.db_config import destroy_db
@@ -12,6 +12,7 @@ class TestUsers(TestCase):
     Test v2 Users view 
     """
     def setUp(self):
+        destroy_db()
         self.app = create_app(config_name="testing")
         self.client = self.app.test_client()
         self.new_user = {

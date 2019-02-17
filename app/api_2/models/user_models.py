@@ -1,4 +1,4 @@
-from app.api_2.models.db_config import init_db, destroy_db
+from app.api_2.models.db_config import init_db
 from werkzeug.security import generate_password_hash
 import jwt, datetime, time,os
 from app.api_2.models.connection import connection
@@ -56,7 +56,6 @@ class Users:
             return 'Invalid token. Please log in again.'
 
     def user_create(self, fname, lname, oname,email,phoneNo, passport, password, isadmin ):
-        destroy_db()
         conn = init_db(self.user_table)
         cur = conn.cursor()
         cur.execute(""" INSERT INTO users (first_name, last_name, other_name, email, phone_number, passport_url, password, isadmin)
@@ -74,5 +73,28 @@ class Users:
         conn.close()
         return user[0]
 
+    def email_exists(self, email):
+        conn = connection()
+        cur = conn.cursor()
+        cur.execute(""" SELECT email FROM users WHERE email = '{}' """.format(email))
+        exit = cur.fetchall()
+        conn.close()
+        return exit
+
+    def phone_number_exists(self, phNo):
+        conn = connection()
+        cur = conn.cursor()
+        cur.execute(""" SELECT phone_number FROM users WHERE phone_number = '{}' """.format(phNo))
+        exit = cur.fetchall()
+        conn.close()
+        return exit
+
+    def passport_exists(self, passport):
+        conn = connection()
+        cur = conn.cursor()
+        cur.execute(""" SELECT passport_url FROM users WHERE passport_url = '{}' """.format(passport))
+        exit = cur.fetchall()
+        conn.close()
+        return exit
     
 
