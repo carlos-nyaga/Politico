@@ -33,5 +33,5 @@ def register_candidate(id):
             "office_id":candidate[0],
             "candidate_id": candidate[1]
         }
-    }))
+    }),201)
 

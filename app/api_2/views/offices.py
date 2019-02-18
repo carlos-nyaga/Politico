@@ -36,7 +36,7 @@ def create_office():
             "office_id" : created_office[0],
             "office_type": created_office[1],
             "office_name" : created_office[2]
-        }]    })) 
+        }]}),201) 
 
 
 @bp2.route('/offices', methods =['GET'])
@@ -50,7 +50,7 @@ def get_offices():
 def get_office(id):
     office = Offices()
     if not any(office.office_exists(id)):
-        return bad_request('Sorry...Party not found!')
+        return error_response(404,'Sorry...Party not found!')
     return make_response(jsonify({
         "status" : 200,
         "office" : office.office_get(id)
