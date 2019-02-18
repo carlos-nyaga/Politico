@@ -35,8 +35,8 @@ def  create_party():
     return make_response(jsonify({
         "status" : 201,
         "party" : [{
-            "id" : created_party[0],
-            "name" : created_party[1]
+            "party_id" : created_party[0],
+            "party_name" : created_party[1]
         }]    }),201)    
 
 
