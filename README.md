@@ -9,3 +9,17 @@ Politico is a fullstack platform that enables citizens give their mandate to pol
 > https://politico-api-v1.herokuapp.com/api/v1/parties
 
 > https://politico-api-v1.herokuapp.com/api/v1/offices
+
+> https://politico-api-v1.herokuapp.com/api/v2/auth/signup
+
+> https://politico-api-v1.herokuapp.com/api/v2/auth/login
+
+> https://politico-api-v1.herokuapp.com/api/v2/office/<int:id>/register
+
+> https://politico-api-v1.herokuapp.com/api/v2/offices
+
+> https://politico-api-v1.herokuapp.com/api/v2/offices/<int:id>
+
+> https://politico-api-v1.herokuapp.com/api/v2/parties
+
+> https://politico-api-v1.herokuapp.com/api/v2/parties/<int:id>

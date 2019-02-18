@@ -22,6 +22,15 @@ def create_user():
     if any(map(lambda x: "".join(str(x).split()).isalpha() == False, [data["first_name"], data["last_name"],data["other_name"]])):
             return bad_request("Only alphabets allowed in names")
 
+    if any(user.email_exists(data["email"])):
+        return bad_request('Email already exists....')
+
+    if any(user.phone_number_exists(data["phone_number"])):
+        return bad_request('Phone number already exists....')
+    
+    if any(user.passport_exists(data["passport_url"])):
+        return bad_request('Passport url already exists....')
+
 
     fname = data['first_name']
     lname = data['last_name']
